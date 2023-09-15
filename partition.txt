@@ -1,0 +1,11 @@
+Name            :             Lead                      :                           DIR
+smavpar1        : Harish                                : C:/Users/7396/Documents/Dashboard_parser/patritions/smavpar1
+smavpar2        : Karthik                               : C:/Users/7396/Documents/Dashboard_parser/patritions/smavpar2
+smavpar3        : Veena                                 : C:/Users/7396/Documents/Dashboard_parser/patritions/smavpar3
+smavpar4        : Varun                                 : C:/Users/7396/Documents/Dashboard_parser/patritions/smavpar4
+smavpar5        : Uday                                  : C:/Users/7396/Documents/Dashboard_parser/patritions/smavpar5
+smavpar6        : Anu                                   : C:/Users/7396/Documents/Dashboard_parser/patritions/smavpar6
+smavpar7        : Rajesh                                : C:/Users/7396/Documents/Dashboard_parser/patritions/smavpar7
+smavpar8        : Kamala                                : C:/Users/7396/Documents/Dashboard_parser/patritions/smavpar8
+smavpar9        : Tara                                  : C:/Users/7396/Documents/Dashboard_parser/patritions/smavpar9
+smavpar10       : Shamanth                              : C:/Users/7396/Documents/Dashboard_parser/patritions/smavpar10
