@@ -1,6 +1,6 @@
 import os
 from flask import Flask, request, jsonify
-from parser_module1 import TimingParser
+from parser_module import TimingParser
 import pymongo
 
 app = Flask(__name__)
@@ -91,7 +91,13 @@ def process_directories(input_file):
                                 "ETA": "",
                                 "Comments": "",
                                 "Plan of Action": "",
-                                "Directory": directory
+                                "Directory": directory,
+                                "pre-info": [
+                                    {
+                                        "dateTime": " ",
+                                        "comment": " ",
+                                        },
+                                    ]
                             }
                             # print(results)
 
@@ -138,5 +144,37 @@ def process_directories_route():
     result, status_code = process_directories(input_file)
     return jsonify(result), status_code
 
+@app.route('/get_data', methods=['GET'])
+def get_data():
+    try:
+        # Query the MongoDB collection to retrieve data
+        data = list(collection.find())
+
+        # Convert the MongoDB documents to a list of dictionaries
+        data_list = []
+        for doc in data:
+            data_list.append({
+                "Sl.No": doc["Sl.No"],
+                "Partition": doc["Partition"],
+                "Lead": doc["Lead"],
+                "Intra_Voils(SPV)": doc["Intra_Voils(SPV)"],
+                "Intra_Voils(PBA)": doc["Intra_Voils(PBA)"],
+                "Inter_Voils(SPV)": doc["Inter_Voils(SPV)"],
+                "Inter_Voils(PBA)": doc["Inter_Voils(PBA)"],
+                "Util%": doc["Util%"],
+                "Congestion": doc["Congestion"],
+                "Shorts": doc["Shorts"],
+                "ETA": doc["ETA"],
+                "Comments": doc["Comments"],
+                "Plan of Action": doc["Plan of Action"],
+                "Directory": doc["Directory"],
+                "pre-info": doc["pre-info"]
+            })
+
+        return jsonify(data_list), 200
+    except Exception as e:
+        return {"error": str(e)}, 500
+    
+    
 if __name__ == '__main__':
     app.run(debug=True)
