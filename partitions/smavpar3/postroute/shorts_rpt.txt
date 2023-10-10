@@ -1,0 +1,27 @@
+****************************************
+Innovus 22.12-s080_1 (64bit) 04/24/2023 15:05 (Linux 3.10.0-693.el7.x86_64)
+
+Report : Shorts Summary 
+	--path_type full
+	-delay_type max
+	-input_pins
+	-nets
+	-slack_lesser_than 0.000
+	-max_paths 5
+	-transition_time
+	-capacitance
+Design : multi-scenario design
+Version: Q-2019.12-SP5-2
+Date   : Wed Sep  6 07:33:54 2023
+****************************************
+
+Memory Modules:
+
+Total Modules: 50
+Modules in Use: 30
+Available Modules: 20
+
+
+shorts : 22
+
+

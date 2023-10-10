@@ -112,3 +112,61 @@ class TimingParser:
                 
         except Exception as e:
             print("Error:", e)
+
+
+class UtilizationParser:
+    def __init__(self, file_path):
+        self.file_path = file_path
+
+    def parse_files(self):
+        try:
+            with open(self.file_path, 'r') as file:
+                lines = file.readlines()
+                for line in lines:
+                    if "utilization %" in line.lower():
+                        utilization_percentage = line.split(":")[-1].strip()
+                        # print(utilization_percentage)
+                        # print('***************************&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&****************************************')
+                        return utilization_percentage
+            return None  # Return None if utilization data is not found
+        except Exception as e:
+            print(f"Error parsing utilization report: {str(e)}")
+            return None
+        
+
+class ShortsParser:
+    def __init__(self, file_path):
+        self.file_path = file_path
+
+    def parse_files(self):
+        try:
+            with open(self.file_path, 'r') as file:
+                lines = file.readlines()
+                for line in lines:
+                    print(lines)
+                    if "shorts :" in line.lower():
+                        shorts = line.split(":")[-1].strip()
+                        # print(shorts)
+                        return shorts
+            return None  # Return None if shorts data is not found
+        except Exception as e:
+            print(f"Error parsing shorts report: {str(e)}")
+            return None
+
+
+class CongestionParser:
+    def __init__(self, file_path):
+        self.file_path = file_path
+
+    def parse_files(self):
+        try:
+            with open(self.file_path, 'r') as file:
+                lines = file.readlines()
+                for line in lines:
+                    if "congestion :" in line.lower():
+                        congestion = line.split(":")[-1].strip()
+                        return congestion
+            return None  # Return None if congestion data is not found
+        except Exception as e:
+            print(f"Error parsing congestion report: {str(e)}")
+            return None
